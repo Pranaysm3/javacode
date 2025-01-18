@@ -52,7 +52,7 @@ public class Lab_task1 {
                 long pnum = rd.nextLong();
                 rd.nextLine();
                // rd.close();
-                String insertq="INSERT INTO PRODUCT70 (EMPID, EMPNAME, EMPSALARY, EMPADDRESS,EMPMAILID,EMPPHNO) VALUES (?,?,?,?,?,?)";
+                String insertq="INSERT INTO  EMPLOYEE_INFO(EMPID, EMPNAME, EMPSALARY, EMPADDRESS,EMPMAILID,EMPPHNO) VALUES (?,?,?,?,?,?)";
                 try(PreparedStatement pst=con.prepareStatement(insertq)){
                 	pst.setInt(1, empid);
                 	pst.setString(2, name);
@@ -61,11 +61,12 @@ public class Lab_task1 {
                 	pst.setString(5, mail);
                 	pst.setLong(6, pnum);
                 	int rows = pst.executeUpdate();
-                	if(rows>0) System.out.println("Data Added ");
-                	else System.out.println("Data fail to Add");
+                	if(rows>0) System.out.println("\n Data Added ");
+                	else System.out.println("\nData fail to Add");
                 		}
                  break;
         	case 7:
+        		System.out.println("Exiting application.");
         		return;
         	default :
         		System.out.println("Enter Valid choice....");
